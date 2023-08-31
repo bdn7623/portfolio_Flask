@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="mx-auto" style="width: 800px; margin-top: 250px">
+<h1 align="center">MY PORFOLIO by FLASK</h1>
+</div>
+
+<div class="myproject py-5 bg-light-rgb">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+    {% for project in projects %}
+        <div class="container md-8">
+            <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+              <div class="col-lg-6 col-md-8 mx-auto">
+                  <h2>{{project.title}}</h2>
+                <p class="lead text-body-secondary">{{project.description}}</p>
+                <p>
+                  <a href="{{project.link}}" class="btn btn-primary my-2">Open project</a>
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+    {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}

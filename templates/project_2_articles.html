@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project 2: Articles</title>
+</head>
+<body>
+    <h1 align="center">Project 2: Articles</h1>
+    <p align="center">CRUD, dinamic pages</p>
+    <p align="center"><a href="/project_2_articles/add"><button>Create article</button></a></p>
+
+    {% for number, article in articles %}
+    <h2 align="center">{{article.title}}</h2>
+    <p align="center">{{article.description}}</p>
+    <p align="center"><a href="/project_2_articles/{{number}}"><button>Read text</button></a></p>
+    <p align="center"><a href="/project_2_articles/delete/{{number}}"><button>Delete</button></a></p>
+    <p align="center"><a href="/"><button>Home</button></a></p>
+    {% endfor %}
+
+
+</body>
+</html>
