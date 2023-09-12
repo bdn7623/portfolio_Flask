@@ -1,3 +1,7 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,16 +9,20 @@
     <title>Project 2: Articles</title>
 </head>
 <body>
+<div class="mx-auto" style="width: 800px; margin-top: 250px">
     <h1 align="center">Project 2: Articles</h1>
     <p align="center">CRUD, dinamic pages</p>
 
-<form method="POST">
-    <p>Title<input type="" name="title" value="Title"></p>
-    <p>Description<input type="" name="description" value="Description"></p>
-    <p>Text<textarea name="text" value="Text"></textarea></p>
-    <button>Crete article</button>
-    <p><a href="/"><button>Back</button></a></p>
+<form method="POST" align="center">
+    <p >Title   <input type="" name="title" value="Title"></p>
+    <p>Description   <input type="" name="description" value="Description"></p>
+    <p>Text   <textarea name="text" value="Text" ></textarea></p>
+    <button class="btn btn-primary my-2">Create article</button>
+    <p><a href="/project_2_articles" class="btn btn-primary my-2">Back</a></p>
 </form>
+</div>
 
 </body>
 </html>
+
+{% endblock %}

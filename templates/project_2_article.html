@@ -1,3 +1,7 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +9,16 @@
     <title>Project 2: Articles</title>
 </head>
 <body>
+<div class="mx-auto" style="width: 800px; margin-top: 250px">
     <h1 align="center">Project 2: Articles</h1>
     <p align="center">CRUD, dinamic pages</p>
     <h2 align="center">{{article.title}}</h2>
     <p align="center">{{article.text}}</p>
-    <p align="center"><a href="/project_2_articles"><button>Back</button></a></p>
-    <p align="center"><a href="/"><button>Home</button></a></p>
+    <p align="center"><a href="/project_2_articles" class="btn btn-primary my-2">Back</a></p>
+    <p align="center"><a href="/" class="btn btn-primary my-2">Home</a></p>
+</div>
 
 </body>
 </html>
+
+{% endblock %}

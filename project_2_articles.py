@@ -32,7 +32,7 @@ def get_article(article_id):
 @project_2_articles.route("/project_2_articles/delete/<int:article_id>")
 def delete_article(article_id):
     articles.pop(article_id)
-    return redirect("/")
+    return redirect("/project_2_articles")
 
 @project_2_articles.route("/project_2_articles/add",methods=["GET","POST"])
 def add_article():

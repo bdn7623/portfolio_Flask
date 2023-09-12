@@ -1,3 +1,7 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,18 +9,36 @@
     <title>Project 2: Articles</title>
 </head>
 <body>
+<div class="mx-auto" style="width: 800px; margin-top: 250px">
     <h1 align="center">Project 2: Articles</h1>
     <p align="center">CRUD, dinamic pages</p>
-    <p align="center"><a href="/project_2_articles/add"><button>Create article</button></a></p>
-
-    {% for number, article in articles %}
-    <h2 align="center">{{article.title}}</h2>
-    <p align="center">{{article.description}}</p>
-    <p align="center"><a href="/project_2_articles/{{number}}"><button>Read text</button></a></p>
-    <p align="center"><a href="/project_2_articles/delete/{{number}}"><button>Delete</button></a></p>
-    <p align="center"><a href="/"><button>Home</button></a></p>
-    {% endfor %}
+    <p align="center"><a href="/project_2_articles/add" class="btn btn-primary my-2">Create article</a></p>
 
 
+    <div class="myproject py-5 bg-light-rgb">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for number, article in articles %}
+                <div class="container md-8">
+                    <section class="py-5 text-center container">
+                        <div class="row py-lg-5">
+                            <div class="col-lg-6 col-md-8 mx-auto">
+
+                                <h2 align="center">{{article.title}}</h2>
+                                <p align="center">{{article.description}}</p>
+                                <p align="center"><a href="/project_2_articles/{{number}}" class="btn btn-primary my-2">Read text</a></p>
+                                <p align="center"><a href="/project_2_articles/delete/{{number}}" class="btn btn-primary my-2">Delete</a></p>
+                                <p align="center"><a href="/" class="btn btn-primary my-2">Home</a></p>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
 </body>
 </html>
+
+{% endblock %}
