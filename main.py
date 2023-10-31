@@ -33,7 +33,8 @@ class Project:
 projects = [Project('Project 1: files hosting','This project allows you to download a file with a project archive','/project_1_files'),
             Project('Project 2: Articles','This project implements CRUD using Articles as an example, without CSS','/project_2_articles'),
             Project('Project 3: Bootstrap/layout','This project is an implementation of this page','/'),
-            Project('Project 4: Flask + SQLAlchemy, Flask-Admin', 'This project demonstrates connecting a database and admin panel','/project_4_sqlalchemy')]
+            Project('Project 4: Flask + SQLAlchemy, Flask-Admin', 'This project demonstrates connecting a database and admin panel','/project_4_sqlalchemy'),
+            Project('Project 5: Flask-Admin, Login, Declaring Models', 'This project uses Declaring Models (Many-to-Many Relationships) and Flask-Login','/project_4_sqlalchemy')]
 
 #project_4:
 class Article(db.Model):
@@ -68,5 +69,9 @@ def get_project_2():
 @app.route("/project_4_sqlalchemy")
 def get_project_4():
     return render_template('/project_4_sqlalchemy.html')
+
+@app.route("/project_5_admin")
+def get_project_5():
+    return render_template('/project_5.html')
 
 app.run()
