@@ -1,0 +1,32 @@
+{% extends 'project_5_layout.html' %}
+
+{% block content %}
+
+<div class="mx-auto" style="width: 800px; margin-top: 50px;">
+<h1 align="center">Project_5</h1>
+</div>
+
+<div class="myproject py-5 bg-light-rgb">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+    {% for category in categories %}
+        <div class="container md-8">
+            <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+              <div class="col-lg-6 col-md-8 mx-auto">
+                  <img src="/static/images/{{category.img}}" alt="No img" class="rounded-circle flex-shrink-0" width="150" height="150">
+                  <h2>{{category.category_name}}</h2>
+                <p class="lead text-body-secondary">category</p>
+                <p>
+                  <a href="/categories/{{category.id}}" class="btn btn-dark my-2">Open category</a>
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+    {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}

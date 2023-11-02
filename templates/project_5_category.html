@@ -1,0 +1,35 @@
+{% extends 'project_5_layout.html' %}
+
+{% block content %}
+{% if category %}
+    <div class="mx-auto" style="width: 800px; margin-top: 50px;">
+
+        <h1 align="center">{{category.category_name}}</h1>
+
+        <div class="text-center">
+            <img src="/static/images/{{category.img}}" alt="No img" class="rounded-circle flex-shrink-0" width="150" height="150">
+        </div>
+
+        <div class="col p-4 d-flex flex-column position-static">
+
+            {% for article in category.articles %}
+
+              <h3 class="mb-0">{{article.title}}</h3>
+              <p class="card-text mb-auto">{{article.discription}}</p>
+                <div align="center" class="col-lg-6 col-md-8 mx-auto">
+                  <a href="/articles/{{article.id}}" class="btn btn-dark my-2">Continue reading</a>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+{% else %}
+    <div class="mx-auto" style="width: 800px; margin-top: 50px">
+        <h2 align="center display-2">Category not found</h2>
+    </div>
+
+{% endif %}
+{% endblock %}
+
+

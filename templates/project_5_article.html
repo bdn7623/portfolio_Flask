@@ -1,0 +1,32 @@
+{% extends 'project_5_layout.html' %}
+
+{% block content %}
+
+    <div class="mx-auto" style="width: 800px; margin-top: 50px;">
+        <h1 align="center">{{article.title}}</h1>
+
+        <div class="myproject py-5 bg-light-rgb">
+
+            <div class="text-center">
+                <img src="/static/images/{{article.img}}" alt="" class="img-fluid mx-auto d-block mb-3">
+            </div>
+
+            <p>{{article.text}}</p>
+            <p>{{article.date}}</p>
+
+            {% for author in article.authors %}
+            <p>Author: {{author.author_name}}</p>
+            {% endfor %}
+
+            {% for category in article.categories %}
+            <p>Category: {{category.category_name}}</p>
+            {% endfor %}
+
+            <a href="/project_5" class="btn btn-dark my-2">Open all categories</a>
+
+        </div>
+    </div>
+
+{% endblock %}
+
+
